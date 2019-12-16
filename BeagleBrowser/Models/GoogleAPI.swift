@@ -17,7 +17,6 @@ internal struct GoogleAPI {
         
         // Seperate by spaces
         let replaced = term.replacingOccurrences(of: " ", with: "+")
-        print(replaced)
         let urlString = "https://www.google.com/search?q=" + replaced
         
         

@@ -107,7 +107,7 @@ extension ViewController: WKUIDelegate,WKNavigationDelegate{
             url = GoogleAPI.generateURL(searchField.text!)
         }
 
-        guard var readyUrl = url else {
+        guard let readyUrl = url else {
             
             return
         }
@@ -144,23 +144,16 @@ extension ViewController: WKUIDelegate,WKNavigationDelegate{
         }
     }
     
-    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
-        print("Failed nav")
-    }
 
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-        print(navigationAction.request.url?.absoluteString)
-        print(navigationAction.request.isHttpLink, " Is it ?" )
         // This is a HTTP link
         guard let url = navigationAction.request.url, let scheme = url.scheme, scheme.contains("http") else {
-            print("Local or mailto file")
             // This is not HTTP link - can be a local file or a mailto
             decisionHandler(.cancel)
             return
         }
         // TODO:: Not working
-        guard navigationAction.request.isHttpLink else {
-            print("WebM link")
+        guard navigationAction.request.isWebmLink else {
                decisionHandler(.allow)
             return
            }

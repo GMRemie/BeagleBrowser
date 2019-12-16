@@ -9,7 +9,7 @@
 import Foundation
 
 extension URLRequest {
-    var isHttpLink: Bool {
+    var isWebmLink: Bool {
         return self.url?.absoluteString.hasSuffix("webm") ?? false
         //return self.url?.scheme?.contains("https") ?? false
     }

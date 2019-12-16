@@ -103,7 +103,6 @@ class DisplayViewController: UIViewController, VLCMediaPlayerDelegate{
         // Load title
         let titleText = mediaPlayer.media.metaDictionary["title"]
         titleLbl.title = (titleText as! String)
-        //print(mediaPlayer.media.metaDictionary)
     }
     
     

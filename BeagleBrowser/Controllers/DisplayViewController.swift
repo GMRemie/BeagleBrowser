@@ -35,7 +35,7 @@ class DisplayViewController: UIViewController, VLCMediaPlayerDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("Passed in URL",url?.absoluteString)
+        print("Passed in URL",url?.absoluteString!)
         prepareVideoPlayer()
        
         
@@ -96,7 +96,7 @@ class DisplayViewController: UIViewController, VLCMediaPlayerDelegate{
         
         // Load title
         let titleText = mediaPlayer.media.metaDictionary["title"]
-        titleLbl.title = titleText as! String
+        titleLbl.title = (titleText as! String)
         //print(mediaPlayer.media.metaDictionary)
     }
     
@@ -111,7 +111,6 @@ class DisplayViewController: UIViewController, VLCMediaPlayerDelegate{
             timeSlider.maximumValue = Float(videoTime!)
             timeSlider.minimumValue = 0.0
             
-            let converted = secondsToHoursMinutesSeconds(seconds: Int(videoTime!))
             totalTime.text = "\(mediaPlayer.media.length)"
             
         }
@@ -120,14 +119,7 @@ class DisplayViewController: UIViewController, VLCMediaPlayerDelegate{
         
         timeSlider.value = Float(obj.time.intValue)
     }
-    
-    func secondsToHoursMinutesSeconds (seconds : Int) -> (Int, Int) {
-        let total = seconds / 1000
-        let minutes = total / 60
-        let seconds = total % 60
-        return (minutes,seconds)
-    }
-    
+
     fileprivate func toggleVideo(){
         if mediaPlayer.isPlaying{
             mediaPlayer.pause()

@@ -41,10 +41,10 @@ extension ViewController: WKUIDelegate,WKNavigationDelegate{
     fileprivate func search(){
         // TODO:: Nil check
         print("Search called on term: ",searchField.text!)
-        let urlStrings = "https://www.google.com/"
         let urlString = searchField.text!
+        let validString = urlString.hasPrefix("http") ? urlString : "https://\(urlString)"
         
-        guard let url = URL(string: urlString) else {
+        guard let url = URL(string: validString) else {
             return
         }
         
@@ -52,7 +52,7 @@ extension ViewController: WKUIDelegate,WKNavigationDelegate{
         webView.load(urlRequest)
         
         
-        demo()
+       
         
     }
 
@@ -82,7 +82,7 @@ extension ViewController: WKUIDelegate,WKNavigationDelegate{
     }
     
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-        print(navigationAction.request.url?.absoluteString)
+        print(navigationAction.request.url?.absoluteString!)
         // This is a HTTP link
         guard let url = navigationAction.request.url, let scheme = url.scheme, scheme.contains("http") else {
             print("Local or mailto file")

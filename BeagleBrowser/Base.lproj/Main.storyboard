@@ -106,7 +106,7 @@
                                             <action selector="sliderChanged:" destination="sUy-oF-fHi" eventType="valueChanged" id="qmy-HL-Wg6"/>
                                         </connections>
                                     </slider>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nha-wp-JLi">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nha-wp-JLi">
                                         <rect key="frame" x="10" y="30" width="42" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="jV8-Tb-YN2"/>
@@ -116,7 +116,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2:34" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bwn-mW-ZuH">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bwn-mW-ZuH">
                                         <rect key="frame" x="322" y="30" width="42" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="3Fx-2v-zbM"/>
@@ -129,7 +129,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jvf-JO-rdJ">
                                         <rect key="frame" x="222" y="56.5" width="30" height="30"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" image="forward" catalog="system"/>
+                                        <state key="normal" image="goforward" catalog="system"/>
                                         <connections>
                                             <action selector="forwardClicked:" destination="sUy-oF-fHi" eventType="touchUpInside" id="FD1-Zt-mcw"/>
                                         </connections>
@@ -220,8 +220,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="forward" catalog="system" width="64" height="38"/>
         <image name="gobackward" catalog="system" width="60" height="64"/>
+        <image name="goforward" catalog="system" width="60" height="64"/>
         <image name="play.fill" catalog="system" width="58" height="64"/>
     </resources>
 </document>

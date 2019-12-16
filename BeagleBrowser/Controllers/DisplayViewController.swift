@@ -35,7 +35,7 @@ class DisplayViewController: UIViewController, VLCMediaPlayerDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("Passed in URL",url?.absoluteString!)
+        print("Passed in URL",url?.absoluteString)
         prepareVideoPlayer()
        
         

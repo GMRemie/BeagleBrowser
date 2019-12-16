@@ -14,6 +14,11 @@ class ViewController: UIViewController, UITextFieldDelegate, VLCMediaPlayerDeleg
     
     @IBOutlet weak var searchField: UITextField!
     @IBOutlet weak var webView: WKWebView!
+    fileprivate var videoPath: URL? {
+        didSet{
+            performSegue(withIdentifier: "loadVideo", sender: self)
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +33,12 @@ class ViewController: UIViewController, UITextFieldDelegate, VLCMediaPlayerDeleg
         return true
     }
 
+    @IBAction func backButtonClicked(_ sender: UIButton) {
+        webView.goBack()
+    }
+    
+    
+    
 }
 
 
@@ -56,14 +67,9 @@ extension ViewController: WKUIDelegate,WKNavigationDelegate{
         
     }
 
-    
-    func demo (){
-        performSegue(withIdentifier: "loadVideo", sender: self)
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let DisplayController = segue.destination as? DisplayViewController {
-            DisplayController.url = URL(string: "https://is2.4chan.org/wsg/1576181504839.webm")!
+            DisplayController.url = videoPath!
         }
     }
     
@@ -76,13 +82,10 @@ extension ViewController: WKUIDelegate,WKNavigationDelegate{
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
         print("Failed nav")
     }
-    
-    func webView(_ webView: WKWebView, runJavaScriptConfirmPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (Bool) -> Void) {
-        print("JSC control")
-    }
-    
+
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-        print(navigationAction.request.url?.absoluteString!)
+        print(navigationAction.request.url?.absoluteString)
+        print(navigationAction.request.isHttpLink, " Is it ?" )
         // This is a HTTP link
         guard let url = navigationAction.request.url, let scheme = url.scheme, scheme.contains("http") else {
             print("Local or mailto file")
@@ -94,10 +97,14 @@ extension ViewController: WKUIDelegate,WKNavigationDelegate{
         guard navigationAction.request.isHttpLink else {
             print("HttpLink")
                decisionHandler(.allow)
-               return
+            return
            }
         
         decisionHandler(.allow)
+        videoPath = navigationAction.request.url!
+        
     }
+    
+    
     
 }

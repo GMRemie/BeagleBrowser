@@ -10,6 +10,7 @@ import Foundation
 
 extension URLRequest {
     var isHttpLink: Bool {
-        return self.url?.scheme?.contains("https") ?? false
+        return self.url?.absoluteString.hasSuffix("webm") ?? false
+        //return self.url?.scheme?.contains("https") ?? false
     }
 }

@@ -15,7 +15,6 @@
 		D476E43B23A45F380092F068 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D476E43A23A45F380092F068 /* Assets.xcassets */; };
 		D476E43E23A45F380092F068 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D476E43C23A45F380092F068 /* LaunchScreen.storyboard */; };
 		D476E44723A47B4B0092F068 /* URLRequestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D476E44623A47B4B0092F068 /* URLRequestExtension.swift */; };
-		D476E44A23A491710092F068 /* WebmData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D476E44923A491710092F068 /* WebmData.swift */; };
 		D476E44C23A4B0280092F068 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D476E44B23A4B0280092F068 /* Errors.swift */; };
 		D476E45123A4B88F0092F068 /* empty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D476E44F23A4B88F0092F068 /* empty.cpp */; };
 		D476E45523A566E90092F068 /* DisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D476E45423A566E90092F068 /* DisplayViewController.swift */; };
@@ -34,7 +33,6 @@
 		D476E43D23A45F380092F068 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D476E43F23A45F380092F068 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D476E44623A47B4B0092F068 /* URLRequestExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestExtension.swift; sourceTree = "<group>"; };
-		D476E44923A491710092F068 /* WebmData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebmData.swift; sourceTree = "<group>"; };
 		D476E44B23A4B0280092F068 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		D476E44E23A4B88F0092F068 /* BeagleBrowser-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BeagleBrowser-Bridging-Header.h"; sourceTree = "<group>"; };
 		D476E44F23A4B88F0092F068 /* empty.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = empty.cpp; sourceTree = "<group>"; };
@@ -88,7 +86,6 @@
 			children = (
 				D476E45323A566B50092F068 /* Models */,
 				D476E45223A566AE0092F068 /* Controllers */,
-				D476E44823A491260092F068 /* Services */,
 				D476E44523A47B390092F068 /* Extensions */,
 				D476E42E23A45F2F0092F068 /* AppDelegate.swift */,
 				D476E43023A45F2F0092F068 /* SceneDelegate.swift */,
@@ -110,14 +107,6 @@
 				D476E44623A47B4B0092F068 /* URLRequestExtension.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		D476E44823A491260092F068 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				D476E44923A491710092F068 /* WebmData.swift */,
-			);
-			path = Services;
 			sourceTree = "<group>";
 		};
 		D476E45223A566AE0092F068 /* Controllers */ = {
@@ -243,7 +232,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D476E44A23A491710092F068 /* WebmData.swift in Sources */,
 				D476E45123A4B88F0092F068 /* empty.cpp in Sources */,
 				D476E43323A45F2F0092F068 /* ViewController.swift in Sources */,
 				D476E44723A47B4B0092F068 /* URLRequestExtension.swift in Sources */,

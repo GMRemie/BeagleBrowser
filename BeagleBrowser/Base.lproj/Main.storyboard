@@ -82,38 +82,87 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jtc-kD-kHs">
-                                <rect key="frame" x="10" y="737.5" width="394" height="122.5"/>
+                                <rect key="frame" x="20" y="753.5" width="374" height="106.5"/>
                                 <subviews>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="150" minValue="0.0" maxValue="236" translatesAutoresizingMaskIntoConstraints="NO" id="9Ln-tp-wK3">
-                                        <rect key="frame" x="8" y="10" width="378" height="30"/>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A4L-zW-Lro">
+                                        <rect key="frame" x="172" y="56.5" width="30" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="29" id="VJ3-37-v2p"/>
+                                            <constraint firstAttribute="height" constant="30" id="Vnl-dV-Xaz"/>
+                                            <constraint firstAttribute="width" constant="30" id="ilt-zV-p3T"/>
                                         </constraints>
-                                        <color key="minimumTrackTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="maximumTrackTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <connections>
-                                            <action selector="sliderChanged:" destination="sUy-oF-fHi" eventType="valueChanged" id="qmy-HL-Wg6"/>
-                                        </connections>
-                                    </slider>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A4L-zW-Lro">
-                                        <rect key="frame" x="183" y="64" width="28" height="33.5"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" image="playpause.fill" catalog="system">
+                                        <state key="normal" image="play.fill" catalog="system">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="togglePlay:" destination="sUy-oF-fHi" eventType="touchUpInside" id="0Vu-VQ-f9A"/>
                                         </connections>
                                     </button>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="9Ln-tp-wK3">
+                                        <rect key="frame" x="8" y="10" width="358" height="31"/>
+                                        <color key="minimumTrackTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="maximumTrackTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="sliderChanged:" destination="sUy-oF-fHi" eventType="valueChanged" id="qmy-HL-Wg6"/>
+                                        </connections>
+                                    </slider>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nha-wp-JLi">
+                                        <rect key="frame" x="10" y="30" width="42" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="jV8-Tb-YN2"/>
+                                            <constraint firstAttribute="width" constant="42" id="zZF-be-Izo"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="13"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2:34" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bwn-mW-ZuH">
+                                        <rect key="frame" x="322" y="30" width="42" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="3Fx-2v-zbM"/>
+                                            <constraint firstAttribute="width" constant="42" id="gTl-bp-cju"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="13"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jvf-JO-rdJ">
+                                        <rect key="frame" x="222" y="56.5" width="30" height="30"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="forward" catalog="system"/>
+                                        <connections>
+                                            <action selector="forwardClicked:" destination="sUy-oF-fHi" eventType="touchUpInside" id="FD1-Zt-mcw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OAO-dr-aAG">
+                                        <rect key="frame" x="122" y="56.5" width="30" height="30"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="gobackward" catalog="system"/>
+                                        <connections>
+                                            <action selector="rewindClicked:" destination="sUy-oF-fHi" eventType="touchUpInside" id="1l0-Us-VMK"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="0.50963184931506844" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="9Ln-tp-wK3" firstAttribute="top" secondItem="jtc-kD-kHs" secondAttribute="top" constant="10" id="62m-vR-B8Y"/>
-                                    <constraint firstItem="9Ln-tp-wK3" firstAttribute="leading" secondItem="jtc-kD-kHs" secondAttribute="leading" constant="10" id="AXM-wr-Y0P"/>
-                                    <constraint firstAttribute="trailing" secondItem="9Ln-tp-wK3" secondAttribute="trailing" constant="10" id="OWs-ZN-qR2"/>
-                                    <constraint firstItem="A4L-zW-Lro" firstAttribute="top" secondItem="9Ln-tp-wK3" secondAttribute="bottom" constant="25" id="Q2c-nf-4Q9"/>
-                                    <constraint firstItem="A4L-zW-Lro" firstAttribute="centerX" secondItem="jtc-kD-kHs" secondAttribute="centerX" id="Rr8-ct-8W4"/>
-                                    <constraint firstAttribute="bottom" secondItem="A4L-zW-Lro" secondAttribute="bottom" constant="25" id="cMO-Sr-P57"/>
+                                    <constraint firstItem="jvf-JO-rdJ" firstAttribute="width" secondItem="A4L-zW-Lro" secondAttribute="width" id="3rB-75-tna"/>
+                                    <constraint firstAttribute="trailing" secondItem="Bwn-mW-ZuH" secondAttribute="trailing" constant="10" id="4Y2-3K-fcd"/>
+                                    <constraint firstItem="OAO-dr-aAG" firstAttribute="width" secondItem="A4L-zW-Lro" secondAttribute="width" id="5K4-3P-Gwn"/>
+                                    <constraint firstAttribute="bottom" secondItem="A4L-zW-Lro" secondAttribute="bottom" constant="20" id="9q3-cV-7Jw"/>
+                                    <constraint firstItem="9Ln-tp-wK3" firstAttribute="leading" secondItem="jtc-kD-kHs" secondAttribute="leading" constant="10" id="N5E-KS-WhA"/>
+                                    <constraint firstItem="Nha-wp-JLi" firstAttribute="top" secondItem="9Ln-tp-wK3" secondAttribute="bottom" constant="-10" id="PGw-bn-58Z"/>
+                                    <constraint firstItem="A4L-zW-Lro" firstAttribute="leading" secondItem="OAO-dr-aAG" secondAttribute="trailing" constant="20" id="UBd-qH-ycH"/>
+                                    <constraint firstItem="Nha-wp-JLi" firstAttribute="leading" secondItem="jtc-kD-kHs" secondAttribute="leading" constant="10" id="Wm2-PZ-IHC"/>
+                                    <constraint firstItem="OAO-dr-aAG" firstAttribute="centerY" secondItem="A4L-zW-Lro" secondAttribute="centerY" id="bDJ-Sw-CCK"/>
+                                    <constraint firstItem="jvf-JO-rdJ" firstAttribute="leading" secondItem="A4L-zW-Lro" secondAttribute="trailing" constant="20" id="eaE-Zw-wpy"/>
+                                    <constraint firstItem="Bwn-mW-ZuH" firstAttribute="top" secondItem="9Ln-tp-wK3" secondAttribute="bottom" constant="-10" id="gWg-qm-cAG"/>
+                                    <constraint firstItem="A4L-zW-Lro" firstAttribute="centerX" secondItem="jtc-kD-kHs" secondAttribute="centerX" id="hZ9-U2-Mjz"/>
+                                    <constraint firstItem="9Ln-tp-wK3" firstAttribute="top" secondItem="jtc-kD-kHs" secondAttribute="top" constant="10" id="lTS-H6-3RA"/>
+                                    <constraint firstItem="jvf-JO-rdJ" firstAttribute="centerY" secondItem="A4L-zW-Lro" secondAttribute="centerY" id="q5O-eR-Dfo"/>
+                                    <constraint firstItem="OAO-dr-aAG" firstAttribute="height" secondItem="A4L-zW-Lro" secondAttribute="height" id="q5Y-Pa-pzz"/>
+                                    <constraint firstItem="jvf-JO-rdJ" firstAttribute="height" secondItem="A4L-zW-Lro" secondAttribute="height" id="s2g-re-Ffa"/>
+                                    <constraint firstAttribute="trailing" secondItem="9Ln-tp-wK3" secondAttribute="trailing" constant="10" id="svl-xM-2By"/>
                                 </constraints>
                             </view>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qp9-L7-yih">
@@ -139,11 +188,11 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="jtc-kD-kHs" firstAttribute="height" secondItem="Iim-3w-dcG" secondAttribute="height" multiplier="0.15" id="5xP-8i-T0r"/>
-                            <constraint firstItem="jtc-kD-kHs" firstAttribute="leading" secondItem="Iim-3w-dcG" secondAttribute="leading" constant="10" id="9DG-ap-tWD"/>
+                            <constraint firstItem="jtc-kD-kHs" firstAttribute="height" secondItem="Iim-3w-dcG" secondAttribute="height" multiplier="0.13" id="5xP-8i-T0r"/>
+                            <constraint firstItem="jtc-kD-kHs" firstAttribute="leading" secondItem="Iim-3w-dcG" secondAttribute="leading" constant="20" id="9DG-ap-tWD"/>
                             <constraint firstItem="QjQ-Vc-xjy" firstAttribute="leading" secondItem="Iim-3w-dcG" secondAttribute="leading" id="A9m-Uy-0eI"/>
                             <constraint firstItem="Iim-3w-dcG" firstAttribute="bottom" secondItem="jtc-kD-kHs" secondAttribute="bottom" constant="2" id="Iya-Dj-tF8"/>
-                            <constraint firstItem="Iim-3w-dcG" firstAttribute="trailing" secondItem="jtc-kD-kHs" secondAttribute="trailing" constant="10" id="LAS-g7-xny"/>
+                            <constraint firstItem="Iim-3w-dcG" firstAttribute="trailing" secondItem="jtc-kD-kHs" secondAttribute="trailing" constant="20" id="LAS-g7-xny"/>
                             <constraint firstItem="QjQ-Vc-xjy" firstAttribute="top" secondItem="Qp9-L7-yih" secondAttribute="bottom" id="SK7-bQ-6xg"/>
                             <constraint firstItem="Qp9-L7-yih" firstAttribute="trailing" secondItem="Iim-3w-dcG" secondAttribute="trailing" id="VXi-f3-Kgh"/>
                             <constraint firstItem="Iim-3w-dcG" firstAttribute="bottom" secondItem="QjQ-Vc-xjy" secondAttribute="bottom" id="YRy-m1-jMT"/>
@@ -155,12 +204,14 @@
                     </view>
                     <navigationItem key="navigationItem" id="s4d-mc-j9G"/>
                     <connections>
+                        <outlet property="currentTime" destination="Nha-wp-JLi" id="YxQ-sE-p4H"/>
                         <outlet property="movieView" destination="QjQ-Vc-xjy" id="PNk-TR-pXo"/>
                         <outlet property="navBar" destination="Qp9-L7-yih" id="saO-Pg-cjK"/>
                         <outlet property="playToggle" destination="A4L-zW-Lro" id="sn1-3R-3Fg"/>
                         <outlet property="timeSlider" destination="9Ln-tp-wK3" id="nrS-fT-QcG"/>
                         <outlet property="titleLbl" destination="uSM-s8-wi6" id="7jB-65-lqm"/>
                         <outlet property="toolBar" destination="jtc-kD-kHs" id="Sjc-wz-E3v"/>
+                        <outlet property="totalTime" destination="Bwn-mW-ZuH" id="jNE-WI-qpL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i29-Lr-qlj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -169,6 +220,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="playpause.fill" catalog="system" width="64" height="36"/>
+        <image name="forward" catalog="system" width="64" height="38"/>
+        <image name="gobackward" catalog="system" width="60" height="64"/>
+        <image name="play.fill" catalog="system" width="58" height="64"/>
     </resources>
 </document>

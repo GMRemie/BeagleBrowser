@@ -21,6 +21,8 @@ class DisplayViewController: UIViewController, VLCMediaPlayerDelegate{
     
     // Slider details
     fileprivate var videoTime: Int32?
+    @IBOutlet weak var currentTime: UILabel!
+    @IBOutlet weak var totalTime: UILabel!
     
     // Media player functionality
     
@@ -91,7 +93,6 @@ class DisplayViewController: UIViewController, VLCMediaPlayerDelegate{
 
         
         mediaPlayer.play()
-        print("Will play ", mediaPlayer.willPlay)
         
         // Load title
         let titleText = mediaPlayer.media.metaDictionary["title"]
@@ -104,18 +105,29 @@ class DisplayViewController: UIViewController, VLCMediaPlayerDelegate{
 
     func mediaPlayerTimeChanged(_ aNotification: Notification!) {
         let obj = aNotification.object as! VLCMediaPlayer
-        
-        print(obj.media.length.intValue)
-        
+            
         if videoTime == nil{
             videoTime = obj.media.length.intValue
             timeSlider.maximumValue = Float(videoTime!)
             timeSlider.minimumValue = 0.0
             
+            let converted = secondsToHoursMinutesSeconds(seconds: Int(videoTime!))
+            totalTime.text = "\(mediaPlayer.media.length)"
+            
         }
+        
+        currentTime.text = "\(mediaPlayer.time!)"
         
         timeSlider.value = Float(obj.time.intValue)
     }
+    
+    func secondsToHoursMinutesSeconds (seconds : Int) -> (Int, Int) {
+        let total = seconds / 1000
+        let minutes = total / 60
+        let seconds = total % 60
+        return (minutes,seconds)
+    }
+    
     fileprivate func toggleVideo(){
         if mediaPlayer.isPlaying{
             mediaPlayer.pause()
@@ -138,6 +150,12 @@ class DisplayViewController: UIViewController, VLCMediaPlayerDelegate{
     }
     
     
+    @IBAction func rewindClicked(_ sender: UIButton) {
+        mediaPlayer.jumpBackward(5)
+    }
+    @IBAction func forwardClicked(_ sender: UIButton) {
+        mediaPlayer.jumpForward(5)
+    }
     
     
     

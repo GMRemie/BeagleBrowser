@@ -63,7 +63,7 @@ extension ViewController: WKUIDelegate,WKNavigationDelegate{
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let DisplayController = segue.destination as? DisplayViewController {
-            DisplayController.url = URL(string: "https://i.4cdn.org/wsg/1576181231015.webm")!
+            DisplayController.url = URL(string: "https://is2.4chan.org/wsg/1576181504839.webm")!
         }
     }
     
@@ -82,7 +82,6 @@ extension ViewController: WKUIDelegate,WKNavigationDelegate{
     }
     
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-        print("Decide")
         print(navigationAction.request.url?.absoluteString)
         // This is a HTTP link
         guard let url = navigationAction.request.url, let scheme = url.scheme, scheme.contains("http") else {
@@ -91,7 +90,7 @@ extension ViewController: WKUIDelegate,WKNavigationDelegate{
             decisionHandler(.cancel)
             return
         }
-        
+        // TODO:: Not working
         guard navigationAction.request.isHttpLink else {
             print("HttpLink")
                decisionHandler(.allow)

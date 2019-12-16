@@ -9,9 +9,10 @@
 import UIKit
 import WebKit
 
-class ViewController: UIViewController, UITextFieldDelegate, VLCMediaPlayerDelegate {
+class ViewController: UIViewController, UITextFieldDelegate, VLCMediaPlayerDelegate, UITabBarDelegate {
     
     
+    @IBOutlet weak var tabBar: UITabBar!
     @IBOutlet weak var searchField: UITextField!
     @IBOutlet weak var webView: WKWebView!
     fileprivate var videoPath: URL? {
@@ -23,8 +24,27 @@ class ViewController: UIViewController, UITextFieldDelegate, VLCMediaPlayerDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         setupWeb()
+        tabBar.delegate = self
     }
 
+    
+    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        let selected = tabBar.selectedItem
+        switch selected?.tag{
+        case 1:
+            goBack()
+            break
+        case 2:
+            goForward()
+            break
+        case 3:
+            refresh()
+            break
+        default:
+            // DO nothing
+            break
+        }
+    }
     
     // TextField required
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -33,15 +53,31 @@ class ViewController: UIViewController, UITextFieldDelegate, VLCMediaPlayerDeleg
         return true
     }
 
-    @IBAction func backButtonClicked(_ sender: UIButton) {
-        webView.goBack()
+    @IBAction func favoriteClicked(_ sender: UIButton) {
     }
-    
     
     
 }
 
+extension ViewController{
+    // TAB BAR UI CONTROLS
+    fileprivate func goBack(){
+        if webView.canGoBack{
+            webView.goBack()
+        }
+    }
+    fileprivate func goForward(){
+        if webView.canGoForward{
+            webView.goForward()
+        }
+    }
+    fileprivate func refresh(){
+        webView.reload()
+    }
+}
 
+
+// Web page controls
 extension ViewController: WKUIDelegate,WKNavigationDelegate{
     
     fileprivate func setupWeb(){
@@ -55,14 +91,23 @@ extension ViewController: WKUIDelegate,WKNavigationDelegate{
         let urlString = searchField.text!
         let validString = urlString.hasPrefix("http") ? urlString : "https://\(urlString)"
         
-        guard let url = URL(string: validString) else {
+        // QUERY Support
+        
+        var url = URL(string: validString)
+
+        if (!validString.isValidURL()){
+            url = GoogleAPI.generateURL(searchField.text!)
+        }
+
+        guard var readyUrl = url else {
+            
             return
         }
         
-        let urlRequest = URLRequest(url: url)
+        let urlRequest = URLRequest(url: readyUrl)
         webView.load(urlRequest)
         
-        
+    
        
         
     }
@@ -95,7 +140,7 @@ extension ViewController: WKUIDelegate,WKNavigationDelegate{
         }
         // TODO:: Not working
         guard navigationAction.request.isHttpLink else {
-            print("HttpLink")
+            print("WebM link")
                decisionHandler(.allow)
             return
            }

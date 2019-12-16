@@ -19,9 +19,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="95.333333333333329"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="www.google.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eSG-UE-WlG">
-                                        <rect key="frame" x="50" y="51.333333333333343" width="305" height="34"/>
+                                        <rect key="frame" x="20" y="51.333333333333343" width="303" height="34"/>
+                                        <color key="backgroundColor" red="0.96471232179999999" green="0.96469432119999998" blue="0.96470648049999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="34" id="aqU-Ta-FnR"/>
+                                            <constraint firstAttribute="height" constant="34" id="TRD-fC-wfx"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="webSearch" enablesReturnKeyAutomatically="YES"/>
@@ -29,26 +31,27 @@
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="uNd-Gu-STZ"/>
                                         </connections>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n23-6h-M6q">
-                                        <rect key="frame" x="10" y="55.333333333333343" width="30" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gle-es-9Jg">
+                                        <rect key="frame" x="333" y="58.333333333333343" width="22" height="22"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="4Cd-ud-I2U"/>
-                                            <constraint firstAttribute="width" constant="30" id="EVE-Lc-rKZ"/>
+                                            <constraint firstAttribute="height" constant="22" id="Izi-sn-d1b"/>
+                                            <constraint firstAttribute="width" constant="22" id="rpN-PD-qsH"/>
                                         </constraints>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" image="return" catalog="system"/>
+                                        <color key="tintColor" red="0.48235654830000002" green="0.48632824419999998" blue="0.48235279320000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" image="star" catalog="system"/>
                                         <connections>
-                                            <action selector="backButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zDG-Cu-Zri"/>
+                                            <action selector="favoriteClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8IJ-3U-q7V"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="eSG-UE-WlG" secondAttribute="bottom" constant="10" id="20k-t4-6qh"/>
-                                    <constraint firstItem="eSG-UE-WlG" firstAttribute="leading" secondItem="n23-6h-M6q" secondAttribute="trailing" constant="10" id="Fcr-3w-WDq"/>
-                                    <constraint firstAttribute="trailing" secondItem="eSG-UE-WlG" secondAttribute="trailing" constant="20" id="mDN-GU-QXD"/>
-                                    <constraint firstItem="n23-6h-M6q" firstAttribute="leading" secondItem="YSv-OA-QkC" secondAttribute="leading" constant="10" id="pUD-mG-OuU"/>
-                                    <constraint firstAttribute="bottom" secondItem="n23-6h-M6q" secondAttribute="bottom" constant="10" id="xhe-ks-FYo"/>
+                                    <constraint firstAttribute="bottom" secondItem="gle-es-9Jg" secondAttribute="bottom" constant="15" id="Kof-ye-yFI"/>
+                                    <constraint firstItem="eSG-UE-WlG" firstAttribute="leading" secondItem="YSv-OA-QkC" secondAttribute="leading" constant="20" id="PiY-wF-IVd"/>
+                                    <constraint firstItem="gle-es-9Jg" firstAttribute="leading" secondItem="eSG-UE-WlG" secondAttribute="trailing" constant="10" id="YNw-3H-sou"/>
+                                    <constraint firstAttribute="bottom" secondItem="eSG-UE-WlG" secondAttribute="bottom" constant="10" id="i8O-QX-NBS"/>
+                                    <constraint firstAttribute="trailing" secondItem="gle-es-9Jg" secondAttribute="trailing" constant="20" id="sHr-6r-iT3"/>
                                 </constraints>
                             </view>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p4r-eo-XjQ">
@@ -59,10 +62,28 @@
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1cZ-Lq-t7T">
+                                <rect key="frame" x="0.0" y="729" width="375" height="49"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="OnO-9h-egK"/>
+                                </constraints>
+                                <items>
+                                    <tabBarItem tag="1" image="chevron.left" catalog="system" id="Jwn-ij-dH3"/>
+                                    <tabBarItem tag="2" title="" image="chevron.right" catalog="system" id="x0m-iE-z9E"/>
+                                    <tabBarItem tag="3" title="" image="arrow.clockwise" catalog="system" id="EaM-ac-lDO"/>
+                                    <tabBarItem tag="4" image="square" catalog="system" badgeValue="1" id="piO-39-L45"/>
+                                    <tabBarItem tag="5" title="" image="line.horizontal.3" catalog="system" id="Tz0-9m-XWX"/>
+                                </items>
+                            </tabBar>
                         </subviews>
-                        <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="p4r-eo-XjQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0Gk-es-TEN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1cZ-Lq-t7T" secondAttribute="bottom" id="B6S-QX-Jmo"/>
+                            <constraint firstItem="1cZ-Lq-t7T" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="IBO-wf-YqA"/>
+                            <constraint firstItem="1cZ-Lq-t7T" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="IMm-72-RqE"/>
                             <constraint firstItem="YSv-OA-QkC" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.13" id="Ihm-nL-dnI"/>
                             <constraint firstItem="YSv-OA-QkC" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="KDi-bc-jer"/>
                             <constraint firstItem="p4r-eo-XjQ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Qc3-6f-2bu"/>
@@ -75,7 +96,8 @@
                     </view>
                     <connections>
                         <outlet property="searchField" destination="eSG-UE-WlG" id="qCl-rA-wsu"/>
-                        <outlet property="webView" destination="p4r-eo-XjQ" id="cec-3k-gMK"/>
+                        <outlet property="tabBar" destination="1cZ-Lq-t7T" id="jSe-2A-RVl"/>
+                        <outlet property="webView" destination="p4r-eo-XjQ" id="rYG-Lb-N1D"/>
                         <segue destination="sUy-oF-fHi" kind="presentation" identifier="loadVideo" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="e7p-mN-AVF"/>
                     </connections>
                 </viewController>
@@ -234,9 +256,14 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.clockwise" catalog="system" width="56" height="64"/>
+        <image name="chevron.left" catalog="system" width="48" height="64"/>
+        <image name="chevron.right" catalog="system" width="48" height="64"/>
         <image name="gobackward" catalog="system" width="60" height="64"/>
         <image name="goforward" catalog="system" width="60" height="64"/>
+        <image name="line.horizontal.3" catalog="system" width="64" height="32"/>
         <image name="play.fill" catalog="system" width="58" height="64"/>
-        <image name="return" catalog="system" width="64" height="50"/>
+        <image name="square" catalog="system" width="64" height="56"/>
+        <image name="star" catalog="system" width="64" height="58"/>
     </resources>
 </document>

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D4681F2B23A768660082D295 /* GoogleAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4681F2A23A768660082D295 /* GoogleAPI.swift */; };
+		D4681F2D23A809140082D295 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4681F2C23A809140082D295 /* StringExtension.swift */; };
 		D476E42F23A45F2F0092F068 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D476E42E23A45F2F0092F068 /* AppDelegate.swift */; };
 		D476E43123A45F2F0092F068 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D476E43023A45F2F0092F068 /* SceneDelegate.swift */; };
 		D476E43323A45F2F0092F068 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D476E43223A45F2F0092F068 /* ViewController.swift */; };
@@ -23,6 +25,8 @@
 
 /* Begin PBXFileReference section */
 		722C0BBAD6015B7FAC303468 /* Pods-BeagleBrowser.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeagleBrowser.debug.xcconfig"; path = "Target Support Files/Pods-BeagleBrowser/Pods-BeagleBrowser.debug.xcconfig"; sourceTree = "<group>"; };
+		D4681F2A23A768660082D295 /* GoogleAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAPI.swift; sourceTree = "<group>"; };
+		D4681F2C23A809140082D295 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		D476E42B23A45F2F0092F068 /* BeagleBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeagleBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D476E42E23A45F2F0092F068 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D476E43023A45F2F0092F068 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				D476E44623A47B4B0092F068 /* URLRequestExtension.swift */,
+				D4681F2C23A809140082D295 /* StringExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -122,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				D476E44B23A4B0280092F068 /* Errors.swift */,
+				D4681F2A23A768660082D295 /* GoogleAPI.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -234,7 +240,9 @@
 			files = (
 				D476E45123A4B88F0092F068 /* empty.cpp in Sources */,
 				D476E43323A45F2F0092F068 /* ViewController.swift in Sources */,
+				D4681F2D23A809140082D295 /* StringExtension.swift in Sources */,
 				D476E44723A47B4B0092F068 /* URLRequestExtension.swift in Sources */,
+				D4681F2B23A768660082D295 /* GoogleAPI.swift in Sources */,
 				D476E42F23A45F2F0092F068 /* AppDelegate.swift in Sources */,
 				D476E43923A45F2F0092F068 /* BeagleBrowser.xcdatamodeld in Sources */,
 				D476E43123A45F2F0092F068 /* SceneDelegate.swift in Sources */,

@@ -15,6 +15,13 @@ class ViewController: UIViewController, UITextFieldDelegate, VLCMediaPlayerDeleg
     @IBOutlet weak var tabBar: UITabBar!
     @IBOutlet weak var searchField: UITextField!
     @IBOutlet weak var webView: WKWebView!
+    
+    // Back and fourth buttons
+    @IBOutlet weak var backbutton: UITabBarItem!
+    @IBOutlet weak var forwardButton: UITabBarItem!
+    
+    
+    
     fileprivate var videoPath: URL? {
         didSet{
             performSegue(withIdentifier: "loadVideo", sender: self)
@@ -25,6 +32,8 @@ class ViewController: UIViewController, UITextFieldDelegate, VLCMediaPlayerDeleg
         super.viewDidLoad()
         setupWeb()
         tabBar.delegate = self
+        
+        refreshButtons()
     }
 
     
@@ -87,7 +96,6 @@ extension ViewController: WKUIDelegate,WKNavigationDelegate{
     
     fileprivate func search(){
         // TODO:: Nil check
-        print("Search called on term: ",searchField.text!)
         let urlString = searchField.text!
         let validString = urlString.hasPrefix("http") ? urlString : "https://\(urlString)"
         
@@ -106,10 +114,7 @@ extension ViewController: WKUIDelegate,WKNavigationDelegate{
         
         let urlRequest = URLRequest(url: readyUrl)
         webView.load(urlRequest)
-        
-    
-       
-        
+
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -120,8 +125,23 @@ extension ViewController: WKUIDelegate,WKNavigationDelegate{
     
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        print("Finished loading page")
+       refreshButtons()
 
+    }
+    
+    fileprivate func refreshButtons(){
+        // Back button first
+        if (webView.canGoBack){
+            backbutton.isEnabled = true
+        }else{
+            backbutton.isEnabled = false
+        }
+        
+        if (webView.canGoForward){
+            forwardButton.isEnabled = true
+        }else{
+            forwardButton.isEnabled = false
+        }
     }
     
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {

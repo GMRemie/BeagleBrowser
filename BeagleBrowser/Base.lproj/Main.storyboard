@@ -69,12 +69,16 @@
                                     <constraint firstAttribute="height" constant="49" id="OnO-9h-egK"/>
                                 </constraints>
                                 <items>
-                                    <tabBarItem tag="1" image="chevron.left" catalog="system" id="Jwn-ij-dH3"/>
-                                    <tabBarItem tag="2" title="" image="chevron.right" catalog="system" id="x0m-iE-z9E"/>
-                                    <tabBarItem tag="3" title="" image="arrow.clockwise" catalog="system" id="EaM-ac-lDO"/>
-                                    <tabBarItem tag="4" image="square" catalog="system" badgeValue="1" id="piO-39-L45"/>
-                                    <tabBarItem tag="5" title="" image="line.horizontal.3" catalog="system" id="Tz0-9m-XWX"/>
+                                    <tabBarItem tag="1" enabled="NO" image="chevron.left" catalog="system" selectedImage="chevron.left" id="Jwn-ij-dH3">
+                                        <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tabBarItem>
+                                    <tabBarItem tag="2" title="" image="chevron.right" catalog="system" selectedImage="chevron.right" id="x0m-iE-z9E"/>
+                                    <tabBarItem tag="3" title="" image="arrow.clockwise" catalog="system" selectedImage="arrow.clockwise" id="EaM-ac-lDO"/>
+                                    <tabBarItem tag="4" image="square" catalog="system" badgeValue="1" selectedImage="square" id="piO-39-L45"/>
+                                    <tabBarItem tag="5" title="" image="line.horizontal.3" catalog="system" selectedImage="line.horizontal.3" id="Tz0-9m-XWX"/>
                                 </items>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="selectedImageTintColor" red="0.63529849049999998" green="0.63528627159999995" blue="0.63529461620000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </tabBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -95,6 +99,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="backbutton" destination="Jwn-ij-dH3" id="NFi-6t-R9f"/>
+                        <outlet property="forwardButton" destination="x0m-iE-z9E" id="PKb-hY-u4x"/>
                         <outlet property="searchField" destination="eSG-UE-WlG" id="qCl-rA-wsu"/>
                         <outlet property="tabBar" destination="1cZ-Lq-t7T" id="jSe-2A-RVl"/>
                         <outlet property="webView" destination="p4r-eo-XjQ" id="rYG-Lb-N1D"/>

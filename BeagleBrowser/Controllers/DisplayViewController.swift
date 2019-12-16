@@ -35,12 +35,18 @@ class DisplayViewController: UIViewController, VLCMediaPlayerDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("Passed in URL",url?.absoluteString)
         prepareVideoPlayer()
        
         
         // Smooth corners of view controller
         toolBar.layer.cornerRadius = 10
+        
+        navBar.tintColor = UIColor.darkGray
+    }
+    
+    deinit {
+        // CHECK Activity monitor later
+        print("Deinitialization")
     }
     
     fileprivate func prepareVideoPlayer (){
@@ -123,9 +129,12 @@ class DisplayViewController: UIViewController, VLCMediaPlayerDelegate{
     fileprivate func toggleVideo(){
         if mediaPlayer.isPlaying{
             mediaPlayer.pause()
+            playToggle.setImage(UIImage(systemName: "play.fill"), for: .normal)
         }else{
             mediaPlayer.play()
+            playToggle.setImage(UIImage(systemName: "pause"), for: .normal)
         }
+
     }
     
     // Video controls

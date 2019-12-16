@@ -104,7 +104,7 @@
                         <outlet property="searchField" destination="eSG-UE-WlG" id="qCl-rA-wsu"/>
                         <outlet property="tabBar" destination="1cZ-Lq-t7T" id="jSe-2A-RVl"/>
                         <outlet property="webView" destination="p4r-eo-XjQ" id="rYG-Lb-N1D"/>
-                        <segue destination="sUy-oF-fHi" kind="presentation" identifier="loadVideo" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="e7p-mN-AVF"/>
+                        <segue destination="sUy-oF-fHi" kind="presentation" identifier="loadVideo" modalPresentationStyle="fullScreen" id="e7p-mN-AVF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -132,8 +132,8 @@
                                             <constraint firstAttribute="height" constant="30" id="Vnl-dV-Xaz"/>
                                             <constraint firstAttribute="width" constant="30" id="ilt-zV-p3T"/>
                                         </constraints>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" image="play.fill" catalog="system">
+                                        <color key="tintColor" red="0.63529849049999998" green="0.63528627159999995" blue="0.63529461620000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" image="pause" catalog="system">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -142,35 +142,36 @@
                                     </button>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="9Ln-tp-wK3">
                                         <rect key="frame" x="8" y="10" width="319" height="31"/>
-                                        <color key="minimumTrackTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="maximumTrackTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="minimumTrackTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="maximumTrackTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="thumbTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <action selector="sliderChanged:" destination="sUy-oF-fHi" eventType="valueChanged" id="qmy-HL-Wg6"/>
                                         </connections>
                                     </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nha-wp-JLi">
-                                        <rect key="frame" x="10" y="30" width="42" height="21"/>
+                                        <rect key="frame" x="10" y="38" width="42" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="jV8-Tb-YN2"/>
                                             <constraint firstAttribute="width" constant="42" id="zZF-be-Izo"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="13"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bwn-mW-ZuH">
-                                        <rect key="frame" x="283" y="30" width="42" height="21"/>
+                                        <rect key="frame" x="283" y="38" width="42" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="3Fx-2v-zbM"/>
                                             <constraint firstAttribute="width" constant="42" id="gTl-bp-cju"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="13"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jvf-JO-rdJ">
                                         <rect key="frame" x="202.66666666666666" y="45.333333333333371" width="30" height="30"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" red="0.63529849049999998" green="0.63528627159999995" blue="0.63529461620000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" image="goforward" catalog="system"/>
                                         <connections>
                                             <action selector="forwardClicked:" destination="sUy-oF-fHi" eventType="touchUpInside" id="FD1-Zt-mcw"/>
@@ -178,14 +179,14 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OAO-dr-aAG">
                                         <rect key="frame" x="102.66666666666667" y="45.333333333333371" width="30.000000000000014" height="30"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" red="0.63529849049999998" green="0.63528627159999995" blue="0.63529461620000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" image="gobackward" catalog="system"/>
                                         <connections>
                                             <action selector="rewindClicked:" destination="sUy-oF-fHi" eventType="touchUpInside" id="1l0-Us-VMK"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="0.50963184931506844" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="jvf-JO-rdJ" firstAttribute="width" secondItem="A4L-zW-Lro" secondAttribute="width" id="3rB-75-tna"/>
@@ -193,12 +194,12 @@
                                     <constraint firstItem="OAO-dr-aAG" firstAttribute="width" secondItem="A4L-zW-Lro" secondAttribute="width" id="5K4-3P-Gwn"/>
                                     <constraint firstAttribute="bottom" secondItem="A4L-zW-Lro" secondAttribute="bottom" constant="20" id="9q3-cV-7Jw"/>
                                     <constraint firstItem="9Ln-tp-wK3" firstAttribute="leading" secondItem="jtc-kD-kHs" secondAttribute="leading" constant="10" id="N5E-KS-WhA"/>
-                                    <constraint firstItem="Nha-wp-JLi" firstAttribute="top" secondItem="9Ln-tp-wK3" secondAttribute="bottom" constant="-10" id="PGw-bn-58Z"/>
+                                    <constraint firstItem="Nha-wp-JLi" firstAttribute="top" secondItem="9Ln-tp-wK3" secondAttribute="bottom" constant="-2" id="PGw-bn-58Z"/>
                                     <constraint firstItem="A4L-zW-Lro" firstAttribute="leading" secondItem="OAO-dr-aAG" secondAttribute="trailing" constant="20" id="UBd-qH-ycH"/>
                                     <constraint firstItem="Nha-wp-JLi" firstAttribute="leading" secondItem="jtc-kD-kHs" secondAttribute="leading" constant="10" id="Wm2-PZ-IHC"/>
                                     <constraint firstItem="OAO-dr-aAG" firstAttribute="centerY" secondItem="A4L-zW-Lro" secondAttribute="centerY" id="bDJ-Sw-CCK"/>
                                     <constraint firstItem="jvf-JO-rdJ" firstAttribute="leading" secondItem="A4L-zW-Lro" secondAttribute="trailing" constant="20" id="eaE-Zw-wpy"/>
-                                    <constraint firstItem="Bwn-mW-ZuH" firstAttribute="top" secondItem="9Ln-tp-wK3" secondAttribute="bottom" constant="-10" id="gWg-qm-cAG"/>
+                                    <constraint firstItem="Bwn-mW-ZuH" firstAttribute="top" secondItem="9Ln-tp-wK3" secondAttribute="bottom" constant="-2" id="gWg-qm-cAG"/>
                                     <constraint firstItem="A4L-zW-Lro" firstAttribute="centerX" secondItem="jtc-kD-kHs" secondAttribute="centerX" id="hZ9-U2-Mjz"/>
                                     <constraint firstItem="9Ln-tp-wK3" firstAttribute="top" secondItem="jtc-kD-kHs" secondAttribute="top" constant="10" id="lTS-H6-3RA"/>
                                     <constraint firstItem="jvf-JO-rdJ" firstAttribute="centerY" secondItem="A4L-zW-Lro" secondAttribute="centerY" id="q5O-eR-Dfo"/>
@@ -212,14 +213,19 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="4g7-mU-MDa"/>
                                 </constraints>
-                                <color key="barTintColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="textShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </textAttributes>
+                                <textAttributes key="largeTitleTextAttributes">
+                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="textShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Title" id="uSM-s8-wi6">
                                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="lMR-0n-RV6">
-                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
                                                 <action selector="doneClicked:" destination="sUy-oF-fHi" id="WLO-ME-tZa"/>
                                             </connections>
@@ -268,7 +274,7 @@
         <image name="gobackward" catalog="system" width="60" height="64"/>
         <image name="goforward" catalog="system" width="60" height="64"/>
         <image name="line.horizontal.3" catalog="system" width="64" height="32"/>
-        <image name="play.fill" catalog="system" width="58" height="64"/>
+        <image name="pause" catalog="system" width="44" height="64"/>
         <image name="square" catalog="system" width="64" height="56"/>
         <image name="star" catalog="system" width="64" height="58"/>
     </resources>

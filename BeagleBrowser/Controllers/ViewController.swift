@@ -63,7 +63,7 @@ extension ViewController: WKUIDelegate,WKNavigationDelegate{
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let DisplayController = segue.destination as? DisplayViewController {
-            DisplayController.url = URL(string: "https://is2.4chan.org/wsg/1575764425048.webm")!
+            DisplayController.url = URL(string: "https://i.4cdn.org/wsg/1576181231015.webm")!
         }
     }
     

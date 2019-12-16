@@ -99,12 +99,10 @@ class DisplayViewController: UIViewController, VLCMediaPlayerDelegate{
         //print(mediaPlayer.media.metaDictionary)
     }
     
-    func mediaPlayerStateChanged(_ aNotification: Notification!) {
-       // print("State has chenged ")
-       // print(aNotification)
-    }
+    
+    
+
     func mediaPlayerTimeChanged(_ aNotification: Notification!) {
-        print("TIME CHANGE:",aNotification)
         let obj = aNotification.object as! VLCMediaPlayer
         
         print(obj.media.length.intValue)
@@ -134,7 +132,8 @@ class DisplayViewController: UIViewController, VLCMediaPlayerDelegate{
     
     
     @IBAction func sliderChanged(_ sender: UISlider) {
-        
+        let time = VLCTime(int: Int32(Int(sender.value)))
+        mediaPlayer.time = time!
         
     }
     
